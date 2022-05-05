@@ -1,0 +1,10 @@
+{
+    "name": "sample_electron_progress",
+    "version": "1.0.0",
+    "description": "Sample electron program.",
+    "main": "main.js",
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {}
+  }

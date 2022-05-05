@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <title>BacklogTaskManager</title>
+    <script src="form.js"></script>
+  </head>
+  <body>
+    <div id="overlay">
+      <div id="cv-spinner">
+          <span id="spinner"></span>
+          <label id="proc_outline"></label>
+          <label id="proc_detail"></label>
+      </div>
+    </div>
+    <div id="titlebar">
+      <img id="titlebar_icon" src="../images/icon.png">
+      <div id="titlebar_subject">BacklogTaskManager</div>
+      <input id="titlebar_end_button" type="button" value="×" onclick="window.close();">
+    </div>
+    <div id="exec_area">
+      <input type="button" id="exec_button" value="課題取得" onclick="getTask()">
+      <label for="result_txt" id="result_lbl">ステータス</label>
+      <input type="text" id="result_txt">
+    </div>
+    <div id="result_area">
+      <div>
+        <label class="resul_label">課題件数</label>
+        <img class="image_button" src="../images/download.png" width="24" onclick="outputTaskCount()">
+      </div>
+      <table id="task_count">
+        <tr>
+          <td id="not_compatible_count">未対応</td>
+          <td id="processing_count">処理中</td>
+          <td id="processed_count">処理済み</td>
+          <td id="completion_count">完了</td>
+          <td id="total_count">総件数</td>
+        </tr>
+        <tr>
+          <td>　</td>
+          <td>　</td>
+          <td>　</td>
+          <td>　</td>
+          <td>　</td>
+        </tr>
+      </table>
+      <div>
+        <label class="resul_label">未対応一覧</label>
+        <img class="image_button" src="../images/download.png" width="24" onclick="outputTaskList()">
+      </div>
+      <div id="task_list_div">
+        <table id="task_list">
+          <tr>
+            <th id="task_sir">キー</th>
+            <th id="task_reg_date">登録日</th>
+            <th id="task_customer">顧客</th>
+            <th id="task_title">件名</th>
+          </tr>
+          <tr>
+            <td>　</td>
+            <td>　</td>
+            <td>　</td>
+            <td>　</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

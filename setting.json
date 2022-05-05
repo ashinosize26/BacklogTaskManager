@@ -1,0 +1,25 @@
+{
+    "backlog": {
+        "apiKey": "",
+        "space": "",
+        "projectId": "",
+        "issueTypeId": "",
+        "statusId": {
+            "notCompatible": "1",
+            "processing": "2",
+            "processed":"3",
+            "completion": "4"
+        },
+        "createdSince": "2022-04-01",
+        "createdUntil": "2023-03-31",
+        "count": "100"
+    },
+    "output":{
+        "taskCount":{
+            "path": ""
+        },
+        "taskList":{
+            "path": ""
+        }
+    }
+}

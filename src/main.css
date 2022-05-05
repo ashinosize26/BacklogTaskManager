@@ -1,0 +1,207 @@
+body{
+    color: #CCCCCC;
+    background-color: #1D1D1D;
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    font-family:'メイリオ', 'Meiryo','ＭＳ ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+}
+button, input, select, textarea {
+    font-family : 'メイリオ', 'Meiryo','ＭＳ ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(204, 204, 204, .5);
+    border-radius: 15px;
+}
+#overlay{
+    position: fixed;
+    top: 32px;
+    z-index: 100;
+    width: 100%;
+    height:100%;
+    display: none;
+    background: rgba(0,0,0,0.6);
+}
+#cv-spinner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px #CCCCCC solid;
+    border-top: 4px #0E639C solid;
+    border-radius: 50%;
+    animation: sp-anime 0.8s infinite linear;
+    margin-bottom: 20px;
+}
+.image_button{
+    margin-left: 20px;
+}
+.image_button:hover{
+    filter: brightness(200%);
+    cursor: pointer;
+}
+@keyframes sp-anime {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#titlebar {
+    background-color: #323232;
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    width:100%;
+    height:32px;
+    display: flex;
+    justify-content: space-between;
+}
+#titlebar_icon{
+    margin: 6px;
+}
+#titlebar_subject{
+    margin-top: 1px;
+    margin-left: 4px;
+    margin-right: auto;
+    font-size: 12px;
+    line-height: 32px;
+}
+#titlebar_end_button{
+    color: #CCCCCC;
+    background-color: transparent;
+    text-decoration: none;
+    border: 0px;
+    transition: .3s;
+    text-align: center;
+    width: 50px;
+    height:100%;
+    -webkit-app-region: no-drag;
+    font-size: 24px;
+    line-height: 32px;
+}
+#titlebar_end_button:hover{
+    cursor:pointer;
+    background-color: #D71526;
+}
+#exec_area{
+    /*background-color: #252525;*/
+    padding-top: 24px;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+#exec_button {
+    color: #CCCCCC;
+    background-color: #0E639C;
+    text-decoration: none;
+    border: 0px;
+    border-radius: 3px;
+    transition: .3s;
+    text-align: center;
+    width: 140px;
+    height:28px;
+    font-size: 18px;
+    outline: none;
+}
+#exec_button:hover{
+    cursor:pointer;
+    background-color: #1177BB;
+}
+#result_lbl{
+    margin-left: 14px;
+}
+.resul_label{
+    font-size: 18px;
+}
+#result_txt{
+    margin-left: 10px;
+    background-color: #323232;
+    color: #CCCCCC;
+    border: 1px solid #323232;
+    width: 556px;
+    height: 26px;
+    font-size: 16px;
+}
+#result_txt:focus{
+    border: 1px solid #0E639C;
+    outline: none;
+}
+#result_area{
+    margin-top: 30px;
+    margin-bottom: 0;
+    margin-left: 40px;
+    margin-right: 25px;
+}
+#task_count{
+    margin-top: 5px;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 98.2%;
+}
+#task_count tr{
+    border-bottom: solid 1px #323232;
+    cursor: default;
+}
+#task_count td{
+    text-align: left;
+    padding: 8px 0;
+}
+#not_compatible_count{
+    width: 20%;
+}
+#processing_count{
+    width: 20%;
+}
+#processed_count{
+    width: 20%;
+}
+#completion_count{
+    width: 20%;
+}
+#total_count{
+    width: 20%;
+}
+#task_list_div{
+    overflow-y: scroll;
+    height:340px;
+}
+#task_list{
+    margin-top: 5px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    word-break: break-all;
+    border-spacing: 0;
+    width: 100%;
+}
+#task_list tr{
+    border-bottom: solid 1px #323232;
+    cursor: default;
+}
+#task_list td{
+    text-align: left;
+    padding: 8px 0;
+}
+#task_list th{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #1D1D1D;
+    font-weight: normal;
+    text-align: left;
+    padding: 8px 0;
+}
+#task_sir{
+    width: 70px;
+}
+#task_reg_date{
+    width: 130px;
+}
+#task_customer{
+    width: 130px;
+}
