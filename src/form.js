@@ -53,17 +53,15 @@ async function getTask(){
             taskVal.innerHTML = task.summary;
         });
     }else{
-        for (let index = 0; index < 10; index++) {
-            const taskRow = taskListTable.insertRow(-1);
-            const taskCell1 = taskRow.insertCell(-1);
-            const taskCell2 = taskRow.insertCell(-1);
-            const taskCell3 = taskRow.insertCell(-1);
-            const taskCell4 = taskRow.insertCell(-1);
-            taskCell1.innerHTML = '　';
-            taskCell2.innerHTML = '　';
-            taskCell3.innerHTML = '　';
-            taskCell4.innerHTML = '　';
-        }
+        const taskRow = taskListTable.insertRow(-1);
+        const taskCell1 = taskRow.insertCell(-1);
+        const taskCell2 = taskRow.insertCell(-1);
+        const taskCell3 = taskRow.insertCell(-1);
+        const taskCell4 = taskRow.insertCell(-1);
+        taskCell1.innerHTML = '　';
+        taskCell2.innerHTML = '　';
+        taskCell3.innerHTML = '　';
+        taskCell4.innerHTML = '　';
     };
 
     // インジケータ非表示
