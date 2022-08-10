@@ -109,5 +109,5 @@ async function outputTaskList(){
     }, 1000);
 }
 function outputChart(){
-    window.open('Chart.html', '', 'width=550,height=550,frame=false,resizable=false');
+    window.open('chart.html', '', 'width=550,height=550,frame=false,resizable=false');
 }

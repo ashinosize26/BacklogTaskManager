@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <title>Chart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-piechart-outlabels"></script>
+    <script>
+      window.onload = function () {
+        const taskCountTable  = window.opener.document.getElementById('task_count');
+        const notCompatibleCount = taskCountTable.rows[1].cells[0].innerHTML;
+        const processingCount = taskCountTable.rows[1].cells[1].innerHTML;
+        const processedCount = taskCountTable.rows[1].cells[2].innerHTML;
+        const completionCount = taskCountTable.rows[1].cells[3].innerHTML;
+        const circleChart = document.getElementById("task_chart").getContext('2d')
+        new Chart(circleChart, {
+          type: 'pie',
+          data: {
+            labels: ["未対応", "処理中", "処理済", "完了"],
+            datasets: [{
+              data: [notCompatibleCount, processingCount, processedCount, completionCount],
+              backgroundColor: ["#fa8072","#FCF16E", "#00ff7f", "#a9a9a9"],
+              borderWidth : [1,1,1,1]
+            }]
+          },
+          options: {
+            responsive: false,
+            layout: {
+              padding: {
+                left: 120,
+                right: 120,
+              }
+            },
+            legend: {
+              display: false
+            },
+            plugins: {
+              outlabels: {
+                text: (ctx) => {
+                    const label = ctx.chart.data.labels[ctx.dataIndex];
+                    const value = ctx.dataset.data[ctx.dataIndex];
+                    const total = ctx.dataset.data.reduce((sum,element) => {
+                      return sum + Number(element);
+                    },0)
+                    const percentage = Math.round((value/total)*100);
+                    return `[${label}]\n ${percentage}%`;
+                },
+                color: '#CCCCCC',
+                backgroundColor: null,
+                lineWidth: 2,
+                font: {
+                    resizable: false,
+                    size: 16,
+                }
+              }
+            }
+          }
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="titlebar">
+      <img id="titlebar_icon" src="../images/icon.png">
+      <div id="titlebar_subject">Chart</div>
+      <input id="titlebar_end_button" type="button" value="×" onclick="window.close();">
+    </div>
+    <div>
+      <canvas id="task_chart" width="500" height="450"></canvas>
+    </div>
+  </body>
+</html>
