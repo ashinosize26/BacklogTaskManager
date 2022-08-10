@@ -205,3 +205,7 @@ button, input, select, textarea {
 #task_customer{
     width: 130px;
 }
+#task_chart{
+    margin-top: 20px;
+    margin-left: 20px;
+}

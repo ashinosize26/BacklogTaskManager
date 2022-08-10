@@ -154,3 +154,18 @@ ipcMain.handle('outputTaskList', async (event) => {
         fs.writeFileSync(path.join(folderPath, `TaskList_${dateText}.json`), jsonData);
     }
 })
+
+// グラフ表示
+ipcMain.handle('outputChart', async (event) => {
+    console.log('receive message: outputChart');
+
+	subWindow = new BrowserWindow({
+        width: 450,
+        height: 450,
+		parent: mainWindow,
+        icon: path.join(__dirname, 'images/icon.png'),
+        resizable:false,
+        frame:false
+	});
+    subWindow.loadURL(path.join(__dirname, 'chart.html'));
+})

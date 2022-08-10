@@ -16,6 +16,10 @@ contextBridge.exposeInMainWorld(
       outputTaskList: async() => {
         const res = await ipcRenderer.invoke('outputTaskList');
         return res;
+      },
+      outputChart: async() => {
+        const res = await ipcRenderer.invoke('outputChart');
+        return res;
       }
     }
   );

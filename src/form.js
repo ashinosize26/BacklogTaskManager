@@ -108,3 +108,6 @@ async function outputTaskList(){
         document.getElementById("overlay").style.display = 'none';
     }, 1000);
 }
+function outputChart(){
+    window.open('Chart.html', '', 'width=550,height=550,frame=false,resizable=false');
+}
