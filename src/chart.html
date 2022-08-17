@@ -28,8 +28,8 @@
             responsive: false,
             layout: {
               padding: {
-                left: 120,
-                right: 120,
+                left: 140,
+                right: 140
               }
             },
             legend: {
@@ -42,9 +42,19 @@
                     const value = ctx.dataset.data[ctx.dataIndex];
                     const total = ctx.dataset.data.reduce((sum,element) => {
                       return sum + Number(element);
-                    },0)
-                    const percentage = Math.round((value/total)*100);
-                    return `[${label}]\n ${percentage}%`;
+                    },0);
+                    const calcPercent = (dataIdx) => {
+                      if (dataIdx == 3) {
+                        // パーセンテージが合計100になるように調整
+                        return ctx.dataset.data.reduce((previousValue, currentValue, currentIndex) => {
+                          return previousValue - (currentIndex == 3 ? 0 : Math.round((Number(currentValue)/total)*100));
+                        }, 100);
+                      } else {
+                        return Math.round((value/total)*100);
+                      };
+                    };
+                    const percentage = calcPercent(ctx.dataIndex);
+                    return `${label}\n ${value}件 [${percentage}%]`;
                 },
                 color: '#CCCCCC',
                 backgroundColor: null,
